@@ -8,6 +8,7 @@
 #define VERSION "3.0lite" 
 #define AUTHOR "PANDA"
 
+new nazwa[] = "FragArena.pl";
 new const skiny[] = "SKINY";
 new const komendy[][] = { "say /skiny", "say /skin", "say /skins", "say /modele", "say /model", "say /models" };
 new gracz[33][7], rozmiar_tablicy[6];
@@ -167,7 +168,7 @@ public menuWyboru(id){
 		return PLUGIN_HANDLED;
 	}
 	
-	new menu = menu_create(fmt("\d[\r*\yFragArena.pl\r*\d] \w^nMenu Skinow:"), "skinsmenu");
+	new menu = menu_create(fmt("\d[\r*\y%s\r*\d] \w^nMenu Skinow:", nazwa), "skinsmenu");
 	new menucallback = menu_makecallback("skins_menucallback");
 	menu_additem(menu, fmt("%s \y-> \d%s", HamBronie[0][1], SkinyNoz[gracz[id][noz]][MODEL_NAME]));
 	menu_additem(menu, fmt("%s \y-> \d%s", HamBronie[1][1], SkinyDeagle[gracz[id][deagle]][MODEL_NAME]));
